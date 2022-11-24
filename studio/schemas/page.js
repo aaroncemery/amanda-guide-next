@@ -22,12 +22,12 @@ const page = {
       title: 'Page Builder',
       type: 'array',
       of: [
-        {type: 'hero'},
+        { type: 'hero' },
         { type: 'textSection' },
         { type: 'textAndImageSection' },
       ],
-    }
-  ]
+    },
+  ],
 }
 
 export default page
