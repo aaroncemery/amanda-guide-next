@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint --fix",
+    "prettier:format": "prettier --config .prettierrc '**/*.{js,jsx,ts,tsx,json,css,scss,md}' --write",
     "prepare": "husky install"
   },
   "lint-staged": {
@@ -14,11 +15,6 @@
       "prettier --write --ignore-unknown",
       "eslint '*/**/*.{js,jsx,ts,tsx}' --fix"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "dependencies": {
     "@types/node": "18.11.9",
