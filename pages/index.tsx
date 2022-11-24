@@ -1,16 +1,17 @@
 import { GetStaticProps } from 'next'
 import { createClient } from 'next-sanity'
-import { isContext } from 'vm'
 import Head from 'next/head'
 import Image from 'next/image'
-
 
 export default function Home(props: any) {
   return (
     <div>
       <Head>
         <title>Amanda Emery | Guide &amp; Teacher</title>
-        <meta name="description" content="Amanda Emery is a guide and teacher helping people discover their most true self." />
+        <meta
+          name="description"
+          content="Amanda Emery is a guide and teacher helping people discover their most true self."
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
@@ -34,8 +35,8 @@ export default function Home(props: any) {
                   </div>
                 </section>
               )
-              default:
-                return null
+            default:
+              return null
           }
         })}
       </main>
@@ -43,14 +44,13 @@ export default function Home(props: any) {
   )
 }
 
-export const getStaticProps: GetStaticProps = async() => {
+export const getStaticProps: GetStaticProps = async () => {
   const client = createClient({
     projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
     dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
     apiVersion: '2022-11-23',
     useCdn: false,
   })
-  
 
   const query = `*[
     _type == "page" && !(_id in path("drafts.**")) && slug.current == $setSlug
@@ -77,15 +77,15 @@ export const getStaticProps: GetStaticProps = async() => {
         "imageAlt": image.alt
       },
     }
-  } | order(_id asc)`;
+  } | order(_id asc)`
   const params = { setSlug: 'index' }
 
   const data = await client.fetch(query, params)
-  console.log(data, 'data');
-  
+  console.log(data, 'data')
+
   return {
     props: {
-      data
+      data,
     },
   }
 }
