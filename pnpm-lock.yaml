@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@portabletext/react': ^2.0.0
   '@types/node': 18.11.9
   '@types/react': 18.0.25
   '@types/react-dom': 18.0.9
@@ -21,6 +22,7 @@ specifiers:
   typescript: 4.9.3
 
 dependencies:
+  '@portabletext/react': 2.0.0_react@18.2.0
   '@types/node': 18.11.9
   '@types/react': 18.0.25
   '@types/react-dom': 18.0.9
@@ -247,6 +249,29 @@ packages:
       picocolors: 1.0.0
       tiny-glob: 0.2.9
       tslib: 2.4.1
+    dev: false
+
+  /@portabletext/react/2.0.0_react@18.2.0:
+    resolution: {integrity: sha512-8AaTfRdRAzWxs2ADbMXV32/LTOJaRDp/m89hax/NTbC8F+OBOgHLBl+M7zSJDVIS1k+fuorFCLcOoq+PuAGJvQ==}
+    engines: {node: ^14.13.1 || >=16.0.0}
+    peerDependencies:
+      react: ^17 || ^18
+    dependencies:
+      '@portabletext/toolkit': 2.0.0
+      '@portabletext/types': 2.0.0
+      react: 18.2.0
+    dev: false
+
+  /@portabletext/toolkit/2.0.0:
+    resolution: {integrity: sha512-2Ljk7dnofxqam9u4B0h1UmpU18h+6SerSU/UanEHQW/IfjmOi48qZDre6MsOrQJ9/LsmlA8MDrmlCND5r/tg3A==}
+    engines: {node: ^14.13.1 || >=16.0.0}
+    dependencies:
+      '@portabletext/types': 2.0.0
+    dev: false
+
+  /@portabletext/types/2.0.0:
+    resolution: {integrity: sha512-AjbCPt9x9U0XFwLuVnIxweBrDAlKKcPJRVkpckjMk77VKEQoYvX2dITf5QtQf1TlLIx8zHJFtMcLmiqDJiGuLg==}
+    engines: {node: ^14.13.1 || >=16.0.0 || >=18.0.0}
     dev: false
 
   /@rushstack/eslint-patch/1.2.0:

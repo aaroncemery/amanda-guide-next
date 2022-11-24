@@ -1,4 +1,5 @@
 import { GetStaticProps } from 'next'
+import { PortableText } from '@portabletext/react'
 import { createClient } from 'next-sanity'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -20,17 +21,50 @@ export default function Home(props: any) {
           switch (item._type) {
             case 'hero':
               return (
-                <section key={item._key} className="hero">
+                <section
+                  key={item._key}
+                  className="hero relative max-h-[480px] min-h-[480px] h-full w-full"
+                >
                   <div className="hero__content">
                     <h1 className="hero__title">{item.title}</h1>
                     <p className="hero__subtitle">{item.subtitle}</p>
                   </div>
-                  <div className="hero__image">
+                  <div className="hero__image max-h-[480px] h-full w-full absolute top-0 left-0">
                     <Image
-                      src={item.image.asset.url}
-                      alt={item.image.alt}
-                      width={item.image.asset.metadata.dimensions.width}
-                      height={item.image.asset.metadata.dimensions.height}
+                      src={item.image}
+                      alt={item.imageAlt}
+                      fill
+                      style={{
+                        objectFit: 'cover',
+                        objectPosition: 'center',
+                        height: '100%',
+                      }}
+                    />
+                  </div>
+                </section>
+              )
+            case 'textSection':
+              return (
+                <section key={item._key} className="textSection">
+                  <div className="textSection__content">
+                    <h2 className="textSection__title">{item.title}</h2>
+                    <PortableText value={item.body} />
+                  </div>
+                </section>
+              )
+            case 'textAndImageSection':
+              return (
+                <section key={item._key} className="textSection">
+                  <div className="textSection__content">
+                    <h2 className="textSection__title">{item.title}</h2>
+                    <PortableText value={item.body} />
+                  </div>
+                  <div className="textSection__image">
+                    <Image
+                      src={item.image}
+                      alt={item.imageAlt}
+                      width={250}
+                      height={250}
                     />
                   </div>
                 </section>
@@ -85,7 +119,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      data,
+      data: data[0].pageBuilder,
     },
   }
 }
