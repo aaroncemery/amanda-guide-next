@@ -40,7 +40,6 @@ export const TextAndImageSection = ({
     <section className="textSection relative lg:min-h-[500px]">
       <div className="container max-w-6xl mx-auto py-8">
         <div className="textSection__content text-white p-4 bg-black/70 rounded-2xl w-6/12">
-          <h2 className="textSection__title font-display">{title}</h2>
           <PortableText value={body} />
         </div>
       </div>
