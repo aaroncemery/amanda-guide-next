@@ -47,6 +47,18 @@ const textSection = {
         },
       ],
     },
+    {
+      title: 'Background Color',
+      name: 'backgroundColor',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'White', value: 'white' },
+          { title: 'Midnight', value: 'midnight' },
+        ],
+        layout: 'radio',
+      },
+    },
   ],
 }
 

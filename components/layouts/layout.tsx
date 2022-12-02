@@ -1,4 +1,4 @@
-import { Navbar } from '../ui/navbar'
+import { Navbar } from '../organisms/navbar'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (

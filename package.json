@@ -17,6 +17,9 @@
     ]
   },
   "dependencies": {
+    "@fontsource/cinzel": "^4.5.9",
+    "@fontsource/dm-serif-display": "^4.5.9",
+    "@fontsource/inter": "^4.5.14",
     "@portabletext/react": "^2.0.0",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
